@@ -61,7 +61,7 @@
                 <td>1</td>
                 <td>Desarrollo de un control de acceso con identificación del usuario basado en la función header().</td>
                 <td><a href="codigoPHP/ejercicio01.php"><img src="webroot/images/play.png" alt="boton_play"></a></td>
-                <td><a href="mostrarcodigo/muestraEjercicio02.php"><img src="webroot/images/code.png" alt="boton_code"></a></td>
+                <td><a href="mostrarcodigo/muestraEjercicio01.php"><img src="webroot/images/code.png" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>2</td>
