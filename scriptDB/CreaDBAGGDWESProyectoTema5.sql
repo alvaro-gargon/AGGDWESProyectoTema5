@@ -20,13 +20,13 @@ create table if not exists T02_Departamento(
 )engine=innodb;
 
 create table if not exists T01_Usuario(
-    T01_CodUsuario varchar(8) primary key,
+    T01_CodUsuario varchar(25) primary key,
     T01_Password varchar(255),
     T01_DescUsuario varchar(255),
-    T01_NumConexiones int,
+    T01_NumConexiones int default 0,
     T01_FechaHoraUltimaConexion datetime,
-    T01_Perfil ENUM('administrador','usuario'),
-    T01_ImagenUsuario blob
+    T01_Perfil ENUM('administrador','usuario') default ('usuario'),
+    T01_ImagenUsuario blob default null
 )engine=innodb;
 
 --creo el usuario con todos los privilegios sobre la base de datos
