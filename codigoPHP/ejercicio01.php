@@ -10,19 +10,19 @@
     <?php /*
      * Nombre: Alvaro Garcia Gonzalez
      * Fecha: 17/11/2025
-     * Uso: Variables superglobales e info.php */ ?>
+     * Uso: Desarrollo de un control de acceso con identificación del usuario basado en la función header()  */ ?>
     <main>
         <h1>Ejercico 1 Tema 5</h1>
         <a href="../indexProyectoTema5.php"><button name="Volver">Volver</button></a>
     <?php
-        $pass = password_hash('paso', 256);
-                $aUsuarios = [
-                    "Alvaro" => [$pass, "Alvaro"],
-                    "admin" => [$pass, "adimn"]
+         $aUsuarios = [
+                    "alvaro" => [hash('sha256', 'paso'), "Alvaro Garcia"],
+                    "heraclio" => [hash('sha256', 'paso'), "Héraclio Borbujo"]
                 ];
-
+                $usuario=$_SERVER['PHP_AUTH_USER'];
+                $passwd = $_SERVER['PHP_AUTH_PW'];
                 //si no se han enviado las credenciales hay que pedir autenticación
-                if (!isset($_SERVER['PHP_AUTH_USER'], $pass)) {
+                if (!isset($usuario,$passwd )) {
                     header('WWW-Authenticate: Basic Realm="Contenido restringido"');
                     header('HTTP/1.0 401 Unauthorized');
                     echo "Usuario no reconocido!";
@@ -30,7 +30,7 @@
                     exit;
                 }
                 //se comprueban las credenciales
-                if (!array_key_exists($_SERVER['PHP_AUTH_USER'], $aUsuarios) || $aUsuarios[$_SERVER['PHP_AUTH_USER']][0] !== $pass) {
+                if (!array_key_exists($usuario, $aUsuarios) || $aUsuarios[$usuario][0] !== hash('sha256', $passwd)) {
                     header('WWW-Authenticate: Basic Realm="Contenido restringido"');
                     header('HTTP/1.0 401 Unauthorized');
                     echo "Credenciales incorrectas!";
