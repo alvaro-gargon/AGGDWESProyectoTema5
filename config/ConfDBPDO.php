@@ -12,7 +12,7 @@
     //define('DNS', 'mysql:host=localhost;dbname:DBAGGDWESProyectoTema4');
     define('DNS', 'mysql:host=10.199.11.252;dbname:DBAGGDWESProyectoLoginLogoffTema5');
     //define($DSN, 'mysql:host=10.199.9.114;dbname:DBAGGDWESProyectoLoginLogoffTema5');
-    define('USERNAME', 'userAGGDWESProyectoTema4');
+    define('USERNAME', 'userAGGDWESProyectoTema5');
     define('PASSWORD', 'paso');
 
 ?>

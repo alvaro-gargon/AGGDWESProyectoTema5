@@ -15,22 +15,7 @@
         <h1>Ejercico 0 Tema 5</h1>
         <a href="../indexProyectoTema5.php"><button name="Volver">Volver</button></a>
     <?php
-        echo '<h3>Contenido de la variable $_SERVER</h3>';
-        echo '<table >';
-        echo '<tr><th>Variable</th><th>Valor</th></tr>';
-        if (!empty($_SERVER)) {
-            foreach ($_SERVER as $variable => $resultado) {
-                echo "<tr>";
-                echo '<td>$_SERVER[' . $variable . ']</td>';
-                echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='2'><em>La variable \$_SERVER está vacía.</em></td></tr>";
-        }
-        echo "</table>";
-
-        //Contenido de la variable $_SESSION-------------------------------------------------------
+    //Contenido de la variable $_SESSION-------------------------------------------------------
         echo '<br><br><h3>Contenido de la variable $_SESSION</h3><br>';
         echo '<table >';
         echo '<tr><th>Variable</th><th>Valor</th></tr>';
@@ -61,6 +46,22 @@
             echo "<tr><td colspan='2'><em>La variable \$_COOKIE está vacía.</em></td></tr>";
         }
         echo "</table>";
+        echo '<h3>Contenido de la variable $_SERVER</h3>';
+        echo '<table >';
+        echo '<tr><th>Variable</th><th>Valor</th></tr>';
+        if (!empty($_SERVER)) {
+            foreach ($_SERVER as $variable => $resultado) {
+                echo "<tr>";
+                echo '<td>$_SERVER[' . $variable . ']</td>';
+                echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='2'><em>La variable \$_SERVER está vacía.</em></td></tr>";
+        }
+        echo "</table>";
+
+        
     
         phpinfo(); 
     ?>

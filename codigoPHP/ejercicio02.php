@@ -35,7 +35,7 @@
                     $miDB = new PDO(DNS,USERNAME,PASSWORD);
                     $miDB->exec("use DBAGGDWESProyectoTema5;");
                     $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = "SELECT T01_CodUsuario,T01_Password,T01_DescUsuario  FROM T_01Usuario 
+                    $sql = "SELECT T01_CodUsuario,T01_Password,T01_DescUsuario  FROM T01_Usuario 
                       WHERE T01_CodUsuario= :usuario AND T01_Password = sha2(:passwd,256)";
 
                     $resultado = $miDB->prepare($sql);
